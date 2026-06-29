@@ -1,0 +1,166 @@
+@import "tailwindcss";
+
+:root {
+  /* Default Dark Mode Values */
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.1);
+  --secondary: #8b5cf6;
+  --bg: #0b0f19;
+  --surface: #111827;
+  --surface-border: rgba(255, 255, 255, 0.05);
+  --surface-hover-border: rgba(255, 255, 255, 0.12);
+  --text-primary: #f9fafb;
+  --text-secondary: #94a3b8;
+  --nav-bg: rgba(11, 15, 25, 0.8);
+  --nav-border: rgba(31, 41, 55, 0.55);
+}
+
+:root.light {
+  /* Light Mode Values */
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.08);
+  --secondary: #7c3aed;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-border: rgba(0, 0, 0, 0.08);
+  --surface-hover-border: rgba(0, 0, 0, 0.15);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --nav-bg: rgba(248, 250, 252, 0.8);
+  --nav-border: rgba(0, 0, 0, 0.06);
+}
+
+@theme {
+  --color-primary: var(--primary);
+  --color-primary-glow: var(--primary-glow);
+  --color-secondary: var(--secondary);
+  
+  --color-dark-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-border: var(--surface-border);
+  --color-surface-hover-border: var(--surface-hover-border);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+
+  --font-outfit: var(--font-outfit), sans-serif;
+  --font-inter: var(--font-inter), sans-serif;
+
+  --animate-fade-in: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-morph: morphing 12s ease-in-out infinite alternate;
+  --animate-pulse-glow: pulse 1.5s infinite;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+  }
+
+  @keyframes morphing {
+    0% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+    50% {
+      border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+    100% {
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    transition: color-scheme 0.3s ease;
+  }
+  html.light {
+    color-scheme: light;
+  }
+  
+  body {
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-outfit), sans-serif;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+  }
+
+  /* Transition for cards & buttons when theme switches */
+  div, section, header, nav, a, button, input, textarea, span {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+}
+
+/* Minimal design utility cards (Stripe/Linear style) */
+@utility glass-panel {
+  background-color: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+}
+
+@utility glass-panel-hover {
+  &:hover {
+    border-color: var(--surface-hover-border);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Gradient highlights */
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-primary) 40%, var(--text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-accent-text {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
