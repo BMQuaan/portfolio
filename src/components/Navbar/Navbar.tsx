@@ -34,14 +34,14 @@ export default function Navbar() {
     const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
     if (savedTheme) {
       setTheme(savedTheme);
-      if (savedTheme === "light") {
-        document.documentElement.classList.add("light");
+      if (savedTheme === "dark") {
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove("light");
+        document.documentElement.classList.remove("dark");
       }
     } else {
-      setTheme("dark");
-      document.documentElement.classList.remove("light");
+      setTheme("light");
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
@@ -77,10 +77,10 @@ export default function Navbar() {
     const nextTheme = theme === "dark" ? "light" : "dark";
     setTheme(nextTheme);
     localStorage.setItem("theme", nextTheme);
-    if (nextTheme === "light") {
-      document.documentElement.classList.add("light");
+    if (nextTheme === "dark") {
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove("light");
+      document.documentElement.classList.remove("dark");
     }
   };
 
