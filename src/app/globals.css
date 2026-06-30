@@ -13,6 +13,11 @@
   --text-secondary: #475569;
   --nav-bg: rgba(248, 250, 252, 0.8);
   --nav-border: rgba(0, 0, 0, 0.06);
+
+  /* Tag/Badge Colors */
+  --badge-bg: rgba(37, 99, 235, 0.05);
+  --badge-border: rgba(37, 99, 235, 0.15);
+  --badge-text: #2563eb;
 }
 
 :root.dark {
@@ -28,6 +33,11 @@
   --text-secondary: #94a3b8;
   --nav-bg: rgba(11, 15, 25, 0.8);
   --nav-border: rgba(31, 41, 55, 0.55);
+
+  /* Tag/Badge Colors */
+  --badge-bg: rgba(59, 130, 246, 0.12);
+  --badge-border: rgba(59, 130, 246, 0.25);
+  --badge-text: #3b82f6;
 }
 
 @theme {
@@ -163,4 +173,10 @@
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.project-tag {
+  background-color: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
 }

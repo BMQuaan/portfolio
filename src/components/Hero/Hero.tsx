@@ -31,14 +31,14 @@ export default function Hero() {
       ></div>
 
       {/* Hero Text content */}
-      <div className="flex flex-col items-start text-left z-10 max-w-[600px] mx-auto lg:mx-0 opacity-0 animate-fade-in">
+      <div className="flex flex-col items-start text-left z-10 max-w-[600px] mx-auto lg:mx-0 animate-fade-in">
         <div className="text-xs uppercase tracking-widest font-semibold text-primary mb-4 flex items-center gap-2">
           <span className="inline-block w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_6px_var(--color-primary)]"></span>
           Aspiring Intern
         </div>
         <h1 className="text-5xl sm:text-7xl font-extrabold mb-6 leading-[1.05] tracking-tighter text-text-primary">
-          Hi, I am <span className="bg-gradient-to-r from-text-primary to-text-secondary bg-clip-text text-transparent">Bui Minh Quan</span>
-          <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent block">Backend Developer</span>
+          Hi, I am <span className="gradient-text">Bui Minh Quan</span>
+          <span className="gradient-accent-text block">Backend Developer</span>
         </h1>
         <p className="text-base sm:text-lg text-text-secondary mb-8 leading-relaxed max-w-[500px]">
           Information Technology student at PTIT HCMC specializing in Software Engineering. 
