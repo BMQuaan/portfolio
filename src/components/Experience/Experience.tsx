@@ -72,7 +72,7 @@ export default function Experience() {
 
               {/* Minimal Card Container */}
               <div className="bg-surface border border-surface-border p-7 rounded-2xl shadow-sm hover:border-surface-hover-border transition-colors text-left">
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-primary mb-3 inline-block bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20">
+                <span className="text-[10px] font-semibold uppercase tracking-wider mb-3 inline-block primary-badge px-2.5 py-1 rounded-full">
                   {item.period}
                 </span>
                 <h3 className="text-lg font-bold text-text-primary mb-1 tracking-tight">{item.role}</h3>

@@ -126,10 +126,7 @@
     transition: color 0.3s ease;
   }
 
-  /* Transition for cards & buttons when theme switches */
-  div, section, header, nav, a, button, input, textarea, span {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-  }
+
 }
 
 /* Minimal design utility cards (Stripe/Linear style) */
@@ -175,7 +172,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.project-tag {
+.primary-badge {
   background-color: var(--badge-bg);
   border: 1px solid var(--badge-border);
   color: var(--badge-text);

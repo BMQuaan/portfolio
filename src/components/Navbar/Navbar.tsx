@@ -213,8 +213,10 @@ export default function Navbar() {
 
         {/* Mobile Menu Dropdown */}
         <div
-          className={`fixed top-0 right-0 w-[75%] max-w-[320px] h-screen bg-surface border-l border-surface-border p-8 pt-24 flex flex-col gap-6 z-40 transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed top-0 right-0 w-[75%] max-w-[320px] h-screen bg-surface border-l border-surface-border p-8 pt-24 flex flex-col gap-6 z-40 transition-all duration-300 ease-in-out ${
+            mobileMenuOpen 
+              ? "translate-x-0 visible pointer-events-auto opacity-100" 
+              : "translate-x-full invisible pointer-events-none opacity-0"
           }`}
         >
           <ul className="list-none flex flex-col gap-4">

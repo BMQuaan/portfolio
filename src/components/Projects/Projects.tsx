@@ -143,7 +143,7 @@ export default function Projects() {
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tags.slice(0, 3).map((tag, idx) => (
-                  <span key={idx} className="project-tag px-2.5 py-1 rounded-md text-[11px] font-semibold">
+                  <span key={idx} className="primary-badge px-2.5 py-1 rounded-md text-[11px] font-semibold">
                     {tag}
                   </span>
                 ))}
